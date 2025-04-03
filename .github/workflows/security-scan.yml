@@ -1,0 +1,50 @@
+name: Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+
+jobs:
+  trivy-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Trivy
+        run: |
+          sudo apt update
+          sudo apt install -y wget
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.50.1/trivy_0.50.1_Linux-64bit.tar.gz
+          tar zxvf trivy_0.50.1_Linux-64bit.tar.gz
+          sudo mv trivy /usr/local/bin/
+
+      - name: Build Docker Image
+        run: docker build -t trivy-security-demo .
+
+      - name: Scan Docker Image
+        run: trivy image --severity HIGH,CRITICAL --exit-code 1 trivy-security-demo:latest
+
+      - name: Save Scan Report
+        if: always()
+        run: trivy image --format json -o trivy-report.json trivy-security-demo:latest
+
+      - name: Upload Scan Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-security-report
+          path: trivy-report.json
+
+      - name: Send Slack Alert on Failure
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{
+            "text": "⚠️ *Security Scan Failed!* High/Critical vulnerabilities found in trivy-security-demo."
+          }' ${{ secrets.SLACK_WEBHOOK_URL }}

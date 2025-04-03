@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 800px;
+            animation: slideIn 0.5s ease-out;
+        }
+        h1 {
+            color: #1e3c72;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .status-box {
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        .status-box.success { background: #e8f5e9; color: #2e7d32; }
+        .status-box.error { background: #ffebee; color: #c62828; }
+        .details {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+        .details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .details li {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Security Dashboard</h1>
+        <div class="status-box {{ 'error' if '⚠️' in scan_data.status else 'success' }}">
+            {{ scan_data.status }} ({{ scan_data.count }} Issues)
+        </div>
+        {% if scan_data.details %}
+        <div class="details">
+            <h3>Top Vulnerabilities:</h3>
+            <ul>
+                {% for vuln in scan_data.details %}
+                <li>
+                    <strong>{{ vuln.VulnerabilityID }}</strong> ({{ vuln.Severity }})<br>
+                    {{ vuln.Title }}<br>
+                    <small>{{ vuln.PkgName }} - {{ vuln.InstalledVersion }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
