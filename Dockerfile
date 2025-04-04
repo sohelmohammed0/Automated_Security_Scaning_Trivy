@@ -5,14 +5,14 @@ WORKDIR /app
 # Copy requirements first for caching
 COPY requirements.txt /app/
 
-# Update package lists, include security updates, and install patched packages
+# Update package lists, include security updates, and install patched versions
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \
-    apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-       perl-base \
-       zlib1g \
+       perl-base=5.36.0-10+deb12u1 \
+       zlib1g=1:1.3.dfsg-3.1 \
+       liblzma5=5.4.5-0.3+deb12u1 \
     && pip install --no-cache-dir -r requirements.txt && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*

@@ -51,7 +51,6 @@ jobs:
         run: |
           trivy image --severity HIGH,CRITICAL --exit-code 1 \
           ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} | tee trivy-scan.log
-        continue-on-error: true  # Allow report generation even if scan fails
 
       # Generate Trivy report (always, even if scan fails)
       - name: Generate Trivy Report
