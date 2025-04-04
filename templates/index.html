@@ -1,83 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Security Dashboard</title>
+    <title>Security Nexus</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            overflow: hidden;
         }
         .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 700px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: rgba(27, 38, 59, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+            width: 85%;
+            max-width: 900px;
+            border: 1px solid #00FFAA;
+            animation: glow 2s infinite alternate;
         }
         h1 {
-            color: #1e3a8a;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: #00FFAA;
+            text-align: center;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 170, 0.7);
         }
-        .status {
+        .status-box {
             padding: 20px;
             border-radius: 10px;
-            font-size: 1.3em;
-            color: #fff;
-            margin-bottom: 25px;
-            font-weight: 500;
-            background: #3498db;
-            transition: background 0.3s ease;
+            text-align: center;
+            font-size: 1.5em;
+            background: rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
         }
-        .status.secure {
-            background: #22c55e;
-        }
-        .status.vulnerable {
-            background: #ef4444;
-        }
-        .status.unavailable, .status.error {
-            background: #6b7280;
-        }
-        .status small {
-            font-size: 0.8em;
-            opacity: 0.8;
+        .status-box:hover {
+            transform: scale(1.02);
         }
         .details {
-            text-align: left;
-            background: #f9fafb;
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #1e3a8a;
+            border: 1px solid #415a77;
+            color: #e0e1dd;
         }
         .details h3 {
-            color: #1e3a8a;
-            font-size: 1.2em;
+            color: #00FFAA;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 15px;
-            font-weight: 600;
         }
         .details ul {
             list-style: none;
             padding: 0;
         }
         .details li {
-            background: #fff;
+            margin: 15px 0;
             padding: 15px;
-            margin: 8px 0;
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease;
+            transition: all 0.3s ease;
         }
-        .details li:hove
+        .details li:hover {
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(0, 255, 170, 0.3); }
+            to { box-shadow: 0 0 30px rgba(0, 255, 170, 0.5); }
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Security Nexus</h1>
+        <div class="status-box" id="status-box">
+            {{ scan_data.status }} ({{ scan_data.count }} Issues) - Last Scan: {{ scan_data.timestamp }}
+        </div>
+        {% if scan_data.details %}
+        <div class="details">
+            <h3>Critical Threats</h3>
+            <ul>
+                {% for vuln in scan_data.details %}
+                <li class="vuln-item">
+                    <strong>{{ vuln.VulnerabilityID }}</strong> ({{ vuln.Severity }})<br>
+                    {{ vuln.Title }}<br>
+                    <small>{{ vuln.PkgName }} - {{ vuln.InstalledVersion }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    <script>
+        const color = "{{ scan_data.color }}";
+        const statusBox = document.getElementById('status-box');
+        statusBox.style.border = `2px solid ${color}`;
+        statusBox.style.color = color;
+        statusBox.style.textShadow = `0 0 5px ${color}`;
+        statusBox.onmouseover = () => statusBox.style.boxShadow = `0 0 15px ${color}`;
+        statusBox.onmouseout = () => statusBox.style.boxShadow = 'none';
+
+        const vulnItems = document.querySelectorAll('.vuln-item');
+        vulnItems.forEach(item => {
+            item.style.borderLeft = `4px solid ${color}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+docker build -t trivy-security-demo .
+
+trivy image --severity HIGH,CRITICAL trivy-security-demo
+
+trivy image --format json -o ./trivy-report.json trivy-security-demo
+
+docker run -d -p 5000:5000 -v ./trivy-report.json:/app/trivy-report.json trivy-security-demo
+
+

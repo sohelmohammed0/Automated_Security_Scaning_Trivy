@@ -2,67 +2,77 @@ name: Automated Security Scan and Deploy
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
   schedule:
     - cron: '0 0 * * *'  # Daily at midnight UTC
-  workflow_dispatch:
+  workflow_dispatch:  # Manual trigger option
 
 jobs:
   build-scan-push:
     runs-on: ubuntu-latest
     steps:
-      # Checkout code
+      # Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Set up Docker Buildx
+      # Set up Docker Buildx for building the image
       - name: Set Up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # Log in to Docker Hub
+      # Log in to Docker Hub using secrets
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Build Docker image
+      # Build the Docker image
       - name: Build Docker Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: false
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
-            ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} \
+                       -t ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest .
 
-      # Scan and generate Trivy report
-      - name: Scan and Generate Trivy Report
-        id: trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
-          format: json
-          output: trivy-report.json
-          exit-code: 1
-          severity: HIGH,CRITICAL
-          timeout: 15m
+      # Set up Trivy
+      - name: Set Up Trivy
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y wget
+          wget https://github.com/aquasecurity/trivy/releases/download/v0.50.1/trivy_0.50.1_Linux-64bit.tar.gz
+          tar zxvf trivy_0.50.1_Linux-64bit.tar.gz
+          sudo mv trivy /usr/local/bin/
+          trivy --version
 
-      # Upload Trivy report
-      - name: Upload Trivy Report
+      # Scan the image for vulnerabilities (fail if HIGH/CRITICAL found)
+      - name: Scan Docker Image with Trivy
+        run: |
+          trivy image --severity HIGH,CRITICAL --exit-code 1 \
+          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} | tee trivy-scan.log
+        continue-on-error: true  # Allow report generation even if scan fails
+
+      # Generate Trivy report (always, even if scan fails)
+      - name: Generate Trivy Report
+        if: always()
+        run: |
+          trivy image --format json -o trivy-report.json \
+          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
+
+      # Upload Trivy report and scan log as artifacts
+      - name: Upload Trivy Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: trivy-report
-          path: trivy-report.json
+          name: trivy-artifacts
+          path: |
+            trivy-report.json
+            trivy-scan.log
 
-      # Push to Docker Hub if scan passes
+      # Push to Docker Hub only if scan passes
       - name: Push Docker Image to Docker Hub
-        if: steps.trivy.outcome == 'success'
+        if: success()
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest

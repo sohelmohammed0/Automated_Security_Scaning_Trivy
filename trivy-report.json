@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T05:57:11.984284326-04:00",
+  "CreatedAt": "2025-04-04T06:36:51.932849069-04:00",
   "ArtifactName": "trivy-security-demo",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,7 +8,7 @@
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:56243c7346283786933a83cc73cf4d52340c9949a23b2b148e013e51e2f43f7e",
+    "ImageID": "sha256:d638a3c1b389396835985aa6fbe69d593fc1e11315b8b83056c6786664fb45a0",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
@@ -17,16 +17,16 @@
       "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
       "sha256:fe28b9a360ea395ec87f7f1d9b23e515d64547fa85b379c0a16ee739026e4a1e",
       "sha256:f8310d9b27cdefa052418750a892ab01b1cd35e2666119a5893e89d3c830ef3e",
-      "sha256:7a479086bb5d3f4253f3d4870ab3f785fafb074eb89fde3ee5707069a6881406",
-      "sha256:4bccea70f2a870807f0f7fff177280c44c1f82cff82ec4e55b4f86f52ea4ea05",
-      "sha256:0553a378f780691dce987afbff9fbb9584fdc587f5e3841ad57dac2050313690"
+      "sha256:05dc1f8b2b7f78a3bc476fc250dc6ef2babf9d74427eb1c536faf721effada1e",
+      "sha256:c56e678db1534e820417180ce272732259f62489157cd4766318f981df29167c",
+      "sha256:9e7928a7f4a1dd3952d9e0c6ddf2ba8c6aeced74e032d2897e6352b5cad73ca2"
     ],
     "RepoTags": [
       "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-04T05:32:46.65584965-04:00",
+      "created": "2025-04-04T06:36:40.577328706-04:00",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -100,34 +100,34 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:32:45Z",
+          "created": "2025-04-04T07:57:57Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:32:45Z",
+          "created": "2025-04-04T10:36:39Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:32:46Z",
+          "created": "2025-04-04T10:36:40Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T09:32:46Z",
+          "created": "2025-04-04T10:36:40Z",
           "created_by": "RUN /bin/sh -c useradd -m appuser \u0026\u0026 chown appuser:appuser /app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:32:46Z",
+          "created": "2025-04-04T10:36:40Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T09:32:46Z",
+          "created": "2025-04-04T10:36:40Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -144,9 +144,9 @@
           "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
           "sha256:fe28b9a360ea395ec87f7f1d9b23e515d64547fa85b379c0a16ee739026e4a1e",
           "sha256:f8310d9b27cdefa052418750a892ab01b1cd35e2666119a5893e89d3c830ef3e",
-          "sha256:7a479086bb5d3f4253f3d4870ab3f785fafb074eb89fde3ee5707069a6881406",
-          "sha256:4bccea70f2a870807f0f7fff177280c44c1f82cff82ec4e55b4f86f52ea4ea05",
-          "sha256:0553a378f780691dce987afbff9fbb9584fdc587f5e3841ad57dac2050313690"
+          "sha256:05dc1f8b2b7f78a3bc476fc250dc6ef2babf9d74427eb1c536faf721effada1e",
+          "sha256:c56e678db1534e820417180ce272732259f62489157cd4766318f981df29167c",
+          "sha256:9e7928a7f4a1dd3952d9e0c6ddf2ba8c6aeced74e032d2897e6352b5cad73ca2"
         ]
       },
       "config": {
