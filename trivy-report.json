@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T11:27:01.0984794+05:30",
+  "CreatedAt": "2025-04-04T02:49:28.673760338-04:00",
   "ArtifactName": "trivy-security-demo:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,25 +8,25 @@
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:8c519d33df74e1f9e467b7dcf87a2b7285492a10acb4e2367884613718e153cd",
+    "ImageID": "sha256:099be54667350487d405a4df9b27757b6474dd6974d0c57ac4811c1a78e0b289",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
       "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
       "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
-      "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-      "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
-      "sha256:443c5767b4d06862105bdf25417f6e5d2df630dae69e15d9115de5b49af3f938",
-      "sha256:a6ae42cf384be3f8a0e408cc38f76169553b985062560d50547ad7893533f9cc",
-      "sha256:d80c9248aa603fe4330c2661e20ea340cc5dd5efa89b2db8844af26cd0bde102",
-      "sha256:f6ecab7e14210a54d558f29da85705dd0f419d7c2721e8bf67afb45946b13b60"
+      "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
+      "sha256:eae26a967fd63639cf25d4ea285b4b191ccfa7b76beab7e8db659511a7faa463",
+      "sha256:7d9a077bf067ef7ae2cb7395b7a4cb2581429e4f7f45116f7104126d2d020ed6",
+      "sha256:f346daa677a6eb4e089e85e129bcbe8ae4c6d84facc47426a98ca2dc2f8dba2e",
+      "sha256:3308e0c0992a9f0ceb0aa5eccbe7cac644c448dea7f1bdf01682a6e38d273d7b",
+      "sha256:3e88cd9834f3578f201cd88682576f62c3f27ff88305ee1f87b27f817c9ff05f"
     ],
     "RepoTags": [
       "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-04T05:55:44.654587916Z",
+      "created": "2025-04-04T02:34:34.762348956-04:00",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -85,49 +85,49 @@
           "empty_layer": true
         },
         {
-          "created": "2025-03-24T18:01:50Z",
+          "created": "2025-04-04T06:33:09Z",
           "created_by": "WORKDIR /app",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:19:03Z",
+          "created": "2025-04-04T06:33:10Z",
           "created_by": "COPY requirements.txt /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:43Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt     \u0026\u0026 apt-get update     \u0026\u0026 apt-get install -y --no-install-recommends perl-base zlib1g     \u0026\u0026 apt-get clean     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:43Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "RUN /bin/sh -c useradd -m appuser \u0026\u0026 chown appuser:appuser /app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T06:34:34Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -141,12 +141,12 @@
           "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
           "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
           "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
-          "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-          "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
-          "sha256:443c5767b4d06862105bdf25417f6e5d2df630dae69e15d9115de5b49af3f938",
-          "sha256:a6ae42cf384be3f8a0e408cc38f76169553b985062560d50547ad7893533f9cc",
-          "sha256:d80c9248aa603fe4330c2661e20ea340cc5dd5efa89b2db8844af26cd0bde102",
-          "sha256:f6ecab7e14210a54d558f29da85705dd0f419d7c2721e8bf67afb45946b13b60"
+          "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
+          "sha256:eae26a967fd63639cf25d4ea285b4b191ccfa7b76beab7e8db659511a7faa463",
+          "sha256:7d9a077bf067ef7ae2cb7395b7a4cb2581429e4f7f45116f7104126d2d020ed6",
+          "sha256:f346daa677a6eb4e089e85e129bcbe8ae4c6d84facc47426a98ca2dc2f8dba2e",
+          "sha256:3308e0c0992a9f0ceb0aa5eccbe7cac644c448dea7f1bdf01682a6e38d273d7b",
+          "sha256:3e88cd9834f3578f201cd88682576f62c3f27ff88305ee1f87b27f817c9ff05f"
         ]
       },
       "config": {
@@ -623,7 +623,8 @@
             "CWE-754"
           ],
           "VendorSeverity": {
-            "redhat": 1
+            "redhat": 1,
+            "ubuntu": 2
           },
           "CVSS": {
             "redhat": {
@@ -637,6 +638,7 @@
             "https://dev.gnupg.org/rG48978ccb4e20866472ef18436a32744350a65158",
             "https://lists.gnupg.org/pipermail/gnupg-announce/2025q1/000491.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2025-30258",
+            "https://ubuntu.com/security/notices/USN-7412-1",
             "https://www.cve.org/CVERecord?id=CVE-2025-30258"
           ],
           "PublishedDate": "2025-03-19T20:15:20.14Z",
@@ -3130,6 +3132,59 @@
           "LastModifiedDate": "2024-11-21T09:02:26.477Z"
         },
         {
+          "VulnerabilityID": "CVE-2025-31115",
+          "PkgID": "liblzma5@5.4.1-0.2",
+          "PkgName": "liblzma5",
+          "PkgIdentifier": {
+            "PURL": "pkg:deb/debian/liblzma5@5.4.1-0.2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "dc841bedc38670cf"
+          },
+          "InstalledVersion": "5.4.1-0.2",
+          "Status": "affected",
+          "Layer": {
+            "DiffID": "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-31115",
+          "DataSource": {
+            "ID": "debian",
+            "Name": "Debian Security Tracker",
+            "URL": "https://salsa.debian.org/security-tracker-team/security-tracker"
+          },
+          "Title": "xz: XZ has a heap-use-after-free bug in threaded .xz decoder",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. In XZ Utils 5.3.3alpha to 5.8.0, the multithreaded .xz decoder in liblzma has a bug where invalid input can at least result in a crash. The effects include heap use after free and writing to an address based on the null pointer plus an offset. Applications and libraries that use the lzma_stream_decoder_mt function are affected. The bug has been fixed in XZ Utils 5.8.1, and the fix has been committed to the v5.4, v5.6, v5.8, and master branches in the xz Git repository. No new release packages will be made from the old stable branches, but a standalone patch is available that applies to all affected releases.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-366",
+            "CWE-416",
+            "CWE-476",
+            "CWE-826"
+          ],
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2025/04/03/1",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/2",
+            "http://www.openwall.com/lists/oss-security/2025/04/03/3",
+            "https://access.redhat.com/security/cve/CVE-2025-31115",
+            "https://github.com/tukaani-project/xz/commit/d5a2ffe41bb77b918a8c96084885d4dbe4bf6480",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-6cc8-p5mm-29w2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-31115",
+            "https://tukaani.org/xz/xz-cve-2025-31115.patch",
+            "https://ubuntu.com/security/notices/USN-7414-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-31115"
+          ],
+          "PublishedDate": "2025-04-03T17:15:30.54Z",
+          "LastModifiedDate": "2025-04-03T20:15:25.113Z"
+        },
+        {
           "VulnerabilityID": "CVE-2022-0563",
           "PkgID": "libmount1@2.38.1-5+deb12u3",
           "PkgName": "libmount1",
@@ -5503,7 +5558,7 @@
             "https://www.cve.org/CVERecord?id=CVE-2005-2541"
           ],
           "PublishedDate": "2005-08-10T04:00:00Z",
-          "LastModifiedDate": "2024-11-20T23:59:47.53Z"
+          "LastModifiedDate": "2025-04-03T01:03:51.193Z"
         },
         {
           "VulnerabilityID": "TEMP-0290435-0B57B5",
@@ -5767,8 +5822,8 @@
           },
           "CVSS": {
             "bitnami": {
-              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
-              "V3Score": 5.5
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 3.3
             },
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
