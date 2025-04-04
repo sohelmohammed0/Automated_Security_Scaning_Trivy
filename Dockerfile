@@ -1,10 +1,10 @@
-FROM python:3.9-slim-bookworm
+FROM python:3.11-slim
 
 WORKDIR /app
 
 COPY requirements.txt /app/
 
-# Update package lists and install latest patched versions of required packages
+# Update package lists and install latest patched versions
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \

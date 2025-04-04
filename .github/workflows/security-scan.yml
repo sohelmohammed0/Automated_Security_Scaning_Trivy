@@ -38,7 +38,6 @@ jobs:
       - name: Build Base Docker Image
         run: |
           docker build -t ${{ env.IMAGE_NAME }}:base-${{ github.sha }} .
-        # Fail the workflow if build fails
         continue-on-error: false
 
       # Install Trivy
@@ -50,7 +49,6 @@ jobs:
           tar zxvf trivy_0.50.1_Linux-64bit.tar.gz
           sudo mv trivy /usr/local/bin/
           trivy --version || { echo "Trivy installation failed"; exit 1; }
-        # Fail the workflow if Trivy installation fails
         continue-on-error: false
 
       # Scan the image for vulnerabilities
