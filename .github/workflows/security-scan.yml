@@ -12,6 +12,7 @@ on:
   workflow_dispatch:  # Manual trigger option
 
 env:
+  IMAGE_NAME: sohelqt8797/trivy-security-demo  # Hardcoded with your Docker Hub username and image name
   FAIL_ON_VULNERABILITIES: true  # Set to false to allow builds to pass even with vulnerabilities
 
 jobs:
@@ -32,13 +33,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      # Set lowercase IMAGE_NAME
-      - name: Set Lowercase Image Name
-        run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-          IMAGE_NAME="${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}-security-demo"
-          echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
 
       # Build the base Docker image
       - name: Build Base Docker Image
@@ -93,9 +87,11 @@ jobs:
             trivy-report.json
             trivy-scan.log
 
-      # Push to Docker Hub
+      # Push to Docker Hub with debug
       - name: Push Docker Image to Docker Hub
         if: success()
         run: |
+          echo "Pushing ${{ env.IMAGE_NAME }}:${{ github.sha }}"
           docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          echo "Pushing ${{ env.IMAGE_NAME }}:latest"
           docker push ${{ env.IMAGE_NAME }}:latest
