@@ -11,14 +11,14 @@ def get_scan_status():
     
     if not os.path.exists(report_path):
         app.logger.warning(f"Report not found at {report_path}")
-        return {'status': 'SCAN UNAVAILABLE', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#888888'}
+        return {'status': 'No Scan Data', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#666666'}
     
     try:
         with open(report_path, 'r') as f:
             content = f.read().strip()
             if not content:
                 app.logger.warning("Report file is empty")
-                return {'status': 'EMPTY REPORT', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#FF5555'}
+                return {'status': 'No Issues Found', 'count': 0, 'details': [], 'timestamp': time.ctime(os.path.getmtime(report_path)), 'color': '#28A745'}
             
             report = json.loads(content)
             app.logger.info("Report loaded successfully")
@@ -30,8 +30,8 @@ def get_scan_status():
                     vulnerabilities.extend(result['Vulnerabilities'])
             
             high_critical = [v for v in vulnerabilities if v.get('Severity') in ['HIGH', 'CRITICAL']]
-            status = 'SECURE' if not high_critical else 'VULNERABLE'
-            color = '#00FFAA' if not high_critical else '#FF5555'
+            status = 'Secure' if not high_critical else 'Vulnerable'
+            color = '#28A745' if not high_critical else '#DC3545'
             app.logger.info(f"Scan status: {status}, Issues: {len(high_critical)}")
             
             return {
@@ -43,18 +43,15 @@ def get_scan_status():
             }
     except json.JSONDecodeError as e:
         app.logger.error(f"JSON error: {str(e)}")
-        return {'status': f'ERROR: INVALID JSON', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#FF5555'}
+        return {'status': 'Error: Invalid Report', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#DC3545'}
     except Exception as e:
         app.logger.error(f"Unexpected error: {str(e)}")
-        return {'status': f'ERROR: {str(e)}', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#FF5555'}
+        return {'status': f'Error: {str(e)}', 'count': 0, 'details': [], 'timestamp': 'N/A', 'color': '#DC3545'}
 
 @app.route('/')
 def home():
     scan_data = get_scan_status()
     return render_template('index.html', scan_data=scan_data)
-
-with app.app_context():
-    get_scan_status()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

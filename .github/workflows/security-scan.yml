@@ -30,11 +30,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Build the Docker image
-      - name: Build Docker Image
+      # Build the base Docker image
+      - name: Build Base Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} \
-                       -t ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:base-${{ github.sha }} .
 
       # Set up Trivy
       - name: Set Up Trivy
@@ -46,19 +45,30 @@ jobs:
           sudo mv trivy /usr/local/bin/
           trivy --version
 
-      # Scan the image for vulnerabilities (fail if HIGH/CRITICAL found)
+      # Scan the image for vulnerabilities
       - name: Scan Docker Image with Trivy
         run: |
           trivy image --severity HIGH,CRITICAL --exit-code 1 \
-          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} | tee trivy-scan.log
-        continue-on-error: true  # Allow report generation even if scan fails
+          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:base-${{ github.sha }} | tee trivy-scan.log
+        continue-on-error: true
 
-      # Generate Trivy report (always, even if scan fails)
+      # Generate Trivy report
       - name: Generate Trivy Report
         if: always()
         run: |
           trivy image --format json -o trivy-report.json \
-          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
+          ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:base-${{ github.sha }}
+
+      # Create final image with the report
+      - name: Build Final Docker Image with Trivy Report
+        run: |
+          # Create a temporary container to copy the report into
+          docker create --name temp-container ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:base-${{ github.sha }}
+          docker cp trivy-report.json temp-container:/app/trivy-report.json
+          # Commit the changes to a new image
+          docker commit temp-container ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
+          docker tag ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest
+          docker rm temp-container
 
       # Upload Trivy report and scan log as artifacts
       - name: Upload Trivy Artifacts
