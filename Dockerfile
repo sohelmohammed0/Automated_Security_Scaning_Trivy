@@ -1,18 +1,21 @@
-FROM python:3.9-slim
+FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
 # Copy requirements first for caching
 COPY requirements.txt /app/
 
-# Update package lists and upgrade vulnerable packages
-RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends \
+# Update package lists, include security updates, and install patched packages
+RUN apt-get update && \
+    echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
        perl-base \
        zlib1g \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && pip install --no-cache-dir -r requirements.txt && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy application files
 COPY app.py /app/
