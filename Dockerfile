@@ -1,42 +1,25 @@
-FROM python:3.9.19-slim-bookworm AS builder
+FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
-# Copy requirements for caching
-COPY requirements.txt .
+# Copy requirements first for caching
+COPY requirements.txt /app/
 
-# Install build dependencies and Python packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        build-essential && \
-    pip install --no-cache-dir -r requirements.txt && \
-    apt-get purge -y build-essential && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-FROM python:3.9.19-slim-bookworm
-
-WORKDIR /app
-
-# Update all packages to latest secure versions
+# Update package lists, include security updates, and install patched packages
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-        perl-base \
-        zlib1g \
-        liblzma5 && \
+       perl-base \
+       zlib1g \
+    && pip install --no-cache-dir -r requirements.txt && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy Python packages from builder
-COPY --from=builder /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
-
 # Copy application files
-COPY app.py .
-COPY templates/ templates/
+COPY app.py /app/
+COPY templates/ /app/templates/
 
 # Expose port
 EXPOSE 5000
