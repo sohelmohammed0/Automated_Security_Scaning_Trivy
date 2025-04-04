@@ -19,15 +19,15 @@ FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
-# Add security repository and install latest secure packages
+# Add security repository, update all packages, and install minimal dependencies
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
         perl-base \
         zlib1g \
         liblzma5 && \
-    apt-get upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

@@ -42,12 +42,14 @@ jobs:
 
       # Scan with Trivy (fail on HIGH/CRITICAL)
       - name: Scan Docker Image with Trivy
+        id: trivy-scan
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
           format: table
           exit-code: 1
           severity: HIGH,CRITICAL
+        continue-on-error: true  # Allow report generation even if scan fails
 
       # Generate Trivy JSON report
       - name: Generate Trivy Report
@@ -65,9 +67,9 @@ jobs:
           name: trivy-report
           path: trivy-report.json
 
-      # Push to Docker Hub
+      # Push to Docker Hub only if scan passes
       - name: Push Docker Image to Docker Hub
-        if: success()
+        if: steps.trivy-scan.outcome == 'success'
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest
