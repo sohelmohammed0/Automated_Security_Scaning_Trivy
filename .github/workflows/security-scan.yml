@@ -69,10 +69,3 @@ jobs:
           name: trivy-security-report
           path: trivy-report.json
 
-      # Send Slack alert on failure (optional)
-      - name: Send Slack Alert on Failure
-        if: failure() && secrets.SLACK_WEBHOOK_URL
-        run: |
-          curl -X POST -H 'Content-type: application/json' --data '{
-            "text": "⚠️ *Security Scan Failed!* High/Critical vulnerabilities found in ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}. Check GitHub Actions for details."
-          }' ${{ secrets.SLACK_WEBHOOK_URL }}
