@@ -19,7 +19,7 @@ FROM python:3.9.19-slim-bookworm
 
 WORKDIR /app
 
-# Add security repository, update all packages, and install minimal dependencies
+# Update all packages to latest secure versions
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \

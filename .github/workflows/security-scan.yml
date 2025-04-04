@@ -40,7 +40,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Scan and generate Trivy report in one step
+      # Scan and generate Trivy report
       - name: Scan and Generate Trivy Report
         id: trivy
         uses: aquasecurity/trivy-action@master
@@ -50,6 +50,7 @@ jobs:
           output: trivy-report.json
           exit-code: 1
           severity: HIGH,CRITICAL
+          timeout: 15m
 
       # Upload Trivy report
       - name: Upload Trivy Report
