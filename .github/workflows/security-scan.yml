@@ -40,26 +40,18 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Scan with Trivy (fail on HIGH/CRITICAL)
-      - name: Scan Docker Image with Trivy
-        id: trivy-scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
-          format: table
-          exit-code: 1
-          severity: HIGH,CRITICAL
-        continue-on-error: true  # Allow report generation even if scan fails
-
-      # Generate Trivy JSON report
-      - name: Generate Trivy Report
+      # Scan and generate Trivy report in one step
+      - name: Scan and Generate Trivy Report
+        id: trivy
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
           format: json
           output: trivy-report.json
+          exit-code: 1
+          severity: HIGH,CRITICAL
 
-      # Upload artifacts
+      # Upload Trivy report
       - name: Upload Trivy Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -67,9 +59,9 @@ jobs:
           name: trivy-report
           path: trivy-report.json
 
-      # Push to Docker Hub only if scan passes
+      # Push to Docker Hub if scan passes
       - name: Push Docker Image to Docker Hub
-        if: steps.trivy-scan.outcome == 'success'
+        if: steps.trivy.outcome == 'success'
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest

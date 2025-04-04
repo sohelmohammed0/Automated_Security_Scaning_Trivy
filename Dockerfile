@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bookworm AS builder
+FROM python:3.9.19-slim-bookworm AS builder
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-FROM python:3.9-slim-bookworm
+FROM python:3.9.19-slim-bookworm
 
 WORKDIR /app
 
