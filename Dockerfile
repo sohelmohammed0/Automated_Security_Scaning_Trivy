@@ -5,7 +5,7 @@ WORKDIR /app
 # Copy requirements first for caching
 COPY requirements.txt /app/
 
-# Update package lists, include security updates, and install patched versions
+# Update package lists and install only necessary, patched packages
 RUN apt-get update && \
     echo "deb http://deb.debian.org/debian-security bookworm-security main" >> /etc/apt/sources.list && \
     apt-get update && \

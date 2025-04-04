@@ -1,33 +1,32 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T09:21:34.249208679Z",
-  "ArtifactName": "sohelqt8797/trivy-security-demo:26d37b7f48ba2fa2c91baf7df6a82fd45a0f794d",
+  "CreatedAt": "2025-04-04T05:57:11.984284326-04:00",
+  "ArtifactName": "trivy-security-demo",
   "ArtifactType": "container_image",
   "Metadata": {
     "OS": {
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:d5eb847980cff67739f45b79f426204082494d764043fd6cd846816bcbf4fcf8",
+    "ImageID": "sha256:56243c7346283786933a83cc73cf4d52340c9949a23b2b148e013e51e2f43f7e",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
       "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
       "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
-      "sha256:13be7ac36ea7b831961acb42607681841d1c0e55fea2c8050fe8209ddcbc0df6",
-      "sha256:f6492f87475e9fc1b2cbc4bdc1ca601162c1ba7587ee600db572074dffca700f",
-      "sha256:964ac6222b1cd75421fcf9011526cc8032513c1cd13ffb2c8c8d87c5e0b5c803",
-      "sha256:72712c009abf979fba796a95866f95e7f4ece1d692cb47d000cf452e03d1bdf9",
-      "sha256:2ba2ec01142c0b20f0fac958eb4b95a06db92532ae48142fe712b9becb3f62a1",
-      "sha256:b82ed9c7768f8443a6a366cb0ff90983d6d080cf6211f2210ce111e48a9fa798"
+      "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
+      "sha256:fe28b9a360ea395ec87f7f1d9b23e515d64547fa85b379c0a16ee739026e4a1e",
+      "sha256:f8310d9b27cdefa052418750a892ab01b1cd35e2666119a5893e89d3c830ef3e",
+      "sha256:7a479086bb5d3f4253f3d4870ab3f785fafb074eb89fde3ee5707069a6881406",
+      "sha256:4bccea70f2a870807f0f7fff177280c44c1f82cff82ec4e55b4f86f52ea4ea05",
+      "sha256:0553a378f780691dce987afbff9fbb9584fdc587f5e3841ad57dac2050313690"
     ],
     "RepoTags": [
-      "sohelqt8797/trivy-security-demo:26d37b7f48ba2fa2c91baf7df6a82fd45a0f794d",
-      "sohelqt8797/trivy-security-demo:latest"
+      "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-04T09:21:17.254957244Z",
+      "created": "2025-04-04T05:32:46.65584965-04:00",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -86,49 +85,49 @@
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T09:21:08Z",
+          "created": "2025-04-04T06:33:09Z",
           "created_by": "WORKDIR /app",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:08Z",
+          "created": "2025-04-04T07:57:23Z",
           "created_by": "COPY requirements.txt /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T07:57:57Z",
           "created_by": "RUN /bin/sh -c apt-get update \u0026\u0026     echo \"deb http://deb.debian.org/debian-security bookworm-security main\" \u003e\u003e /etc/apt/sources.list \u0026\u0026     apt-get update \u0026\u0026     apt-get upgrade -y \u0026\u0026     apt-get install -y --no-install-recommends        perl-base        zlib1g     \u0026\u0026 pip install --no-cache-dir -r requirements.txt \u0026\u0026     apt-get clean \u0026\u0026     rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:45Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:45Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:46Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:46Z",
           "created_by": "RUN /bin/sh -c useradd -m appuser \u0026\u0026 chown appuser:appuser /app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:46Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T09:21:17Z",
+          "created": "2025-04-04T09:32:46Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -142,12 +141,12 @@
           "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
           "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
           "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
-          "sha256:13be7ac36ea7b831961acb42607681841d1c0e55fea2c8050fe8209ddcbc0df6",
-          "sha256:f6492f87475e9fc1b2cbc4bdc1ca601162c1ba7587ee600db572074dffca700f",
-          "sha256:964ac6222b1cd75421fcf9011526cc8032513c1cd13ffb2c8c8d87c5e0b5c803",
-          "sha256:72712c009abf979fba796a95866f95e7f4ece1d692cb47d000cf452e03d1bdf9",
-          "sha256:2ba2ec01142c0b20f0fac958eb4b95a06db92532ae48142fe712b9becb3f62a1",
-          "sha256:b82ed9c7768f8443a6a366cb0ff90983d6d080cf6211f2210ce111e48a9fa798"
+          "sha256:208583b32ebed5f17b132472a908f7f69f191be6996e45344d7c47e7191e3671",
+          "sha256:fe28b9a360ea395ec87f7f1d9b23e515d64547fa85b379c0a16ee739026e4a1e",
+          "sha256:f8310d9b27cdefa052418750a892ab01b1cd35e2666119a5893e89d3c830ef3e",
+          "sha256:7a479086bb5d3f4253f3d4870ab3f785fafb074eb89fde3ee5707069a6881406",
+          "sha256:4bccea70f2a870807f0f7fff177280c44c1f82cff82ec4e55b4f86f52ea4ea05",
+          "sha256:0553a378f780691dce987afbff9fbb9584fdc587f5e3841ad57dac2050313690"
         ]
       },
       "config": {
@@ -164,13 +163,16 @@
         ],
         "User": "appuser",
         "WorkingDir": "/app",
+        "ExposedPorts": {
+          "5000": {}
+        },
         "ArgsEscaped": true
       }
     }
   },
   "Results": [
     {
-      "Target": "sohelqt8797/trivy-security-demo:26d37b7f48ba2fa2c91baf7df6a82fd45a0f794d (debian 12.10)",
+      "Target": "trivy-security-demo (debian 12.10)",
       "Class": "os-pkgs",
       "Type": "debian",
       "Vulnerabilities": [
@@ -179,7 +181,8 @@
           "PkgID": "apt@2.6.1",
           "PkgName": "apt",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/apt@2.6.1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/apt@2.6.1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "d08c5489d80bc317"
           },
           "InstalledVersion": "2.6.1",
           "Status": "affected",
@@ -228,7 +231,8 @@
           "PkgID": "bash@5.2.15-2+b7",
           "PkgName": "bash",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/bash@5.2.15-2%2Bb7?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/bash@5.2.15-2%2Bb7?arch=amd64\u0026distro=debian-12.10",
+            "UID": "9bf7a8e6bd5c6485"
           },
           "InstalledVersion": "5.2.15-2+b7",
           "Status": "affected",
@@ -253,7 +257,8 @@
           "PkgID": "bsdutils@1:2.38.1-5+deb12u3",
           "PkgName": "bsdutils",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/bsdutils@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/bsdutils@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "b5147cb35d13a963"
           },
           "InstalledVersion": "1:2.38.1-5+deb12u3",
           "Status": "affected",
@@ -311,7 +316,8 @@
           "PkgID": "coreutils@9.1-1",
           "PkgName": "coreutils",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/coreutils@9.1-1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/coreutils@9.1-1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "bed513a0ab732758"
           },
           "InstalledVersion": "9.1-1",
           "Status": "will_not_fix",
@@ -372,7 +378,8 @@
           "PkgID": "coreutils@9.1-1",
           "PkgName": "coreutils",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/coreutils@9.1-1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/coreutils@9.1-1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "bed513a0ab732758"
           },
           "InstalledVersion": "9.1-1",
           "Status": "affected",
@@ -423,7 +430,8 @@
           "PkgID": "gcc-12-base@12.2.0-14",
           "PkgName": "gcc-12-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/gcc-12-base@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/gcc-12-base@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "9a668c24c45de553"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -482,7 +490,8 @@
           "PkgID": "gcc-12-base@12.2.0-14",
           "PkgName": "gcc-12-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/gcc-12-base@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/gcc-12-base@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "9a668c24c45de553"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -538,7 +547,8 @@
           "PkgID": "gpgv@2.2.40-1.1",
           "PkgName": "gpgv",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/gpgv@2.2.40-1.1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/gpgv@2.2.40-1.1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "7e56e6619044133a"
           },
           "InstalledVersion": "2.2.40-1.1",
           "Status": "affected",
@@ -592,7 +602,8 @@
           "PkgID": "gpgv@2.2.40-1.1",
           "PkgName": "gpgv",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/gpgv@2.2.40-1.1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/gpgv@2.2.40-1.1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "7e56e6619044133a"
           },
           "InstalledVersion": "2.2.40-1.1",
           "Status": "affected",
@@ -638,7 +649,8 @@
           "PkgID": "libapt-pkg6.0@2.6.1",
           "PkgName": "libapt-pkg6.0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libapt-pkg6.0@2.6.1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libapt-pkg6.0@2.6.1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "bde99af618fe15e4"
           },
           "InstalledVersion": "2.6.1",
           "Status": "affected",
@@ -687,7 +699,8 @@
           "PkgID": "libblkid1@2.38.1-5+deb12u3",
           "PkgName": "libblkid1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libblkid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libblkid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "db8b5ae53bf85f30"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -745,7 +758,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -798,7 +812,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -854,7 +869,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -903,7 +919,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -955,7 +972,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1011,7 +1029,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1066,7 +1085,8 @@
           "PkgID": "libc-bin@2.36-9+deb12u10",
           "PkgName": "libc-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc-bin@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "205f0e4a1d969bcb"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1119,7 +1139,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1172,7 +1193,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1228,7 +1250,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1277,7 +1300,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1329,7 +1353,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1385,7 +1410,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1440,7 +1466,8 @@
           "PkgID": "libc6@2.36-9+deb12u10",
           "PkgName": "libc6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libc6@2.36-9%2Bdeb12u10?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1a7eeabc0a4eae7"
           },
           "InstalledVersion": "2.36-9+deb12u10",
           "Status": "affected",
@@ -1493,7 +1520,8 @@
           "PkgID": "libcap2@1:2.66-4",
           "PkgName": "libcap2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libcap2@2.66-4?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/libcap2@2.66-4?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "59e5af23bbe95278"
           },
           "InstalledVersion": "1:2.66-4",
           "Status": "affected",
@@ -1540,7 +1568,8 @@
           "PkgID": "libgcc-s1@12.2.0-14",
           "PkgName": "libgcc-s1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgcc-s1@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgcc-s1@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b286857ae84ea462"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -1599,7 +1628,8 @@
           "PkgID": "libgcc-s1@12.2.0-14",
           "PkgName": "libgcc-s1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgcc-s1@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgcc-s1@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b286857ae84ea462"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -1655,7 +1685,8 @@
           "PkgID": "libgcrypt20@1.10.1-3",
           "PkgName": "libgcrypt20",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "14d13b47811260d3"
           },
           "InstalledVersion": "1.10.1-3",
           "Status": "fix_deferred",
@@ -1713,7 +1744,8 @@
           "PkgID": "libgcrypt20@1.10.1-3",
           "PkgName": "libgcrypt20",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgcrypt20@1.10.1-3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "14d13b47811260d3"
           },
           "InstalledVersion": "1.10.1-3",
           "Status": "affected",
@@ -1767,7 +1799,8 @@
           "PkgID": "libgnutls30@3.7.9-2+deb12u4",
           "PkgName": "libgnutls30",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u4?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgnutls30@3.7.9-2%2Bdeb12u4?arch=amd64\u0026distro=debian-12.10",
+            "UID": "43b99bda745a9f24"
           },
           "InstalledVersion": "3.7.9-2+deb12u4",
           "Status": "affected",
@@ -1911,7 +1944,8 @@
           "PkgID": "libgssapi-krb5-2@1.20.1-2+deb12u2",
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -1975,7 +2009,8 @@
           "PkgID": "libgssapi-krb5-2@1.20.1-2+deb12u2",
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2021,7 +2056,8 @@
           "PkgID": "libgssapi-krb5-2@1.20.1-2+deb12u2",
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2073,7 +2109,8 @@
           "PkgID": "libgssapi-krb5-2@1.20.1-2+deb12u2",
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2137,7 +2174,8 @@
           "PkgID": "libgssapi-krb5-2@1.20.1-2+deb12u2",
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2204,7 +2242,8 @@
           "PkgID": "libk5crypto3@1.20.1-2+deb12u2",
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2268,7 +2307,8 @@
           "PkgID": "libk5crypto3@1.20.1-2+deb12u2",
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2314,7 +2354,8 @@
           "PkgID": "libk5crypto3@1.20.1-2+deb12u2",
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2366,7 +2407,8 @@
           "PkgID": "libk5crypto3@1.20.1-2+deb12u2",
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2430,7 +2472,8 @@
           "PkgID": "libk5crypto3@1.20.1-2+deb12u2",
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2497,7 +2540,8 @@
           "PkgID": "libkrb5-3@1.20.1-2+deb12u2",
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2561,7 +2605,8 @@
           "PkgID": "libkrb5-3@1.20.1-2+deb12u2",
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2607,7 +2652,8 @@
           "PkgID": "libkrb5-3@1.20.1-2+deb12u2",
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2659,7 +2705,8 @@
           "PkgID": "libkrb5-3@1.20.1-2+deb12u2",
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2723,7 +2770,8 @@
           "PkgID": "libkrb5-3@1.20.1-2+deb12u2",
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2790,7 +2838,8 @@
           "PkgID": "libkrb5support0@1.20.1-2+deb12u2",
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2854,7 +2903,8 @@
           "PkgID": "libkrb5support0@1.20.1-2+deb12u2",
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2900,7 +2950,8 @@
           "PkgID": "libkrb5support0@1.20.1-2+deb12u2",
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2952,7 +3003,8 @@
           "PkgID": "libkrb5support0@1.20.1-2+deb12u2",
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -3016,7 +3068,8 @@
           "PkgID": "libkrb5support0@1.20.1-2+deb12u2",
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -3083,7 +3136,8 @@
           "PkgID": "liblzma5@5.4.1-0.2",
           "PkgName": "liblzma5",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/liblzma5@5.4.1-0.2?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/liblzma5@5.4.1-0.2?arch=amd64\u0026distro=debian-12.10",
+            "UID": "dc841bedc38670cf"
           },
           "InstalledVersion": "5.4.1-0.2",
           "Status": "affected",
@@ -3135,7 +3189,8 @@
           "PkgID": "libmount1@2.38.1-5+deb12u3",
           "PkgName": "libmount1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libmount1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libmount1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "6ebca51aff38e6ce"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -3193,7 +3248,8 @@
           "PkgID": "libncursesw6@6.4-4",
           "PkgName": "libncursesw6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libncursesw6@6.4-4?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libncursesw6@6.4-4?arch=amd64\u0026distro=debian-12.10",
+            "UID": "675ee7ceb3621996"
           },
           "InstalledVersion": "6.4-4",
           "Status": "affected",
@@ -3245,7 +3301,8 @@
           "PkgID": "libpam-modules@1.5.2-6+deb12u1",
           "PkgName": "libpam-modules",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-modules@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-modules@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "854c4c35b318f724"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3303,7 +3360,8 @@
           "PkgID": "libpam-modules@1.5.2-6+deb12u1",
           "PkgName": "libpam-modules",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-modules@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-modules@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "854c4c35b318f724"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3370,7 +3428,8 @@
           "PkgID": "libpam-modules-bin@1.5.2-6+deb12u1",
           "PkgName": "libpam-modules-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-modules-bin@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-modules-bin@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "6e01953a38b979ef"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3428,7 +3487,8 @@
           "PkgID": "libpam-modules-bin@1.5.2-6+deb12u1",
           "PkgName": "libpam-modules-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-modules-bin@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-modules-bin@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "6e01953a38b979ef"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3495,7 +3555,8 @@
           "PkgID": "libpam-runtime@1.5.2-6+deb12u1",
           "PkgName": "libpam-runtime",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-runtime@1.5.2-6%2Bdeb12u1?arch=all\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-runtime@1.5.2-6%2Bdeb12u1?arch=all\u0026distro=debian-12.10",
+            "UID": "a4ba3bc9ed7e203b"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3553,7 +3614,8 @@
           "PkgID": "libpam-runtime@1.5.2-6+deb12u1",
           "PkgName": "libpam-runtime",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam-runtime@1.5.2-6%2Bdeb12u1?arch=all\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam-runtime@1.5.2-6%2Bdeb12u1?arch=all\u0026distro=debian-12.10",
+            "UID": "a4ba3bc9ed7e203b"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3620,7 +3682,8 @@
           "PkgID": "libpam0g@1.5.2-6+deb12u1",
           "PkgName": "libpam0g",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "ceb03f98e63e7ec7"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3678,7 +3741,8 @@
           "PkgID": "libpam0g@1.5.2-6+deb12u1",
           "PkgName": "libpam0g",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libpam0g@1.5.2-6%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "ceb03f98e63e7ec7"
           },
           "InstalledVersion": "1.5.2-6+deb12u1",
           "Status": "affected",
@@ -3745,7 +3809,8 @@
           "PkgID": "libsmartcols1@2.38.1-5+deb12u3",
           "PkgName": "libsmartcols1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsmartcols1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsmartcols1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "ccde01db134296f8"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -3803,7 +3868,8 @@
           "PkgID": "libsqlite3-0@3.40.1-2+deb12u1",
           "PkgName": "libsqlite3-0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsqlite3-0@3.40.1-2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsqlite3-0@3.40.1-2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "9991455ee360ae42"
           },
           "InstalledVersion": "3.40.1-2+deb12u1",
           "Status": "affected",
@@ -3863,7 +3929,8 @@
           "PkgID": "libssl3@3.0.15-1~deb12u1",
           "PkgName": "libssl3",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libssl3@3.0.15-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libssl3@3.0.15-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "d942b1b93cc266a6"
           },
           "InstalledVersion": "3.0.15-1~deb12u1",
           "Status": "affected",
@@ -3919,7 +3986,8 @@
           "PkgID": "libstdc++6@12.2.0-14",
           "PkgName": "libstdc++6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "d98f13167e17dd53"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -3978,7 +4046,8 @@
           "PkgID": "libstdc++6@12.2.0-14",
           "PkgName": "libstdc++6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libstdc%2B%2B6@12.2.0-14?arch=amd64\u0026distro=debian-12.10",
+            "UID": "d98f13167e17dd53"
           },
           "InstalledVersion": "12.2.0-14",
           "Status": "affected",
@@ -4034,7 +4103,8 @@
           "PkgID": "libsystemd0@252.36-1~deb12u1",
           "PkgName": "libsystemd0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1fac8c64bbb56138"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4085,7 +4155,8 @@
           "PkgID": "libsystemd0@252.36-1~deb12u1",
           "PkgName": "libsystemd0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1fac8c64bbb56138"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4128,7 +4199,8 @@
           "PkgID": "libsystemd0@252.36-1~deb12u1",
           "PkgName": "libsystemd0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1fac8c64bbb56138"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4172,7 +4244,8 @@
           "PkgID": "libsystemd0@252.36-1~deb12u1",
           "PkgName": "libsystemd0",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libsystemd0@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "1fac8c64bbb56138"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4217,7 +4290,8 @@
           "PkgID": "libtinfo6@6.4-4",
           "PkgName": "libtinfo6",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libtinfo6@6.4-4?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libtinfo6@6.4-4?arch=amd64\u0026distro=debian-12.10",
+            "UID": "c798ccd544602ef8"
           },
           "InstalledVersion": "6.4-4",
           "Status": "affected",
@@ -4269,7 +4343,8 @@
           "PkgID": "libudev1@252.36-1~deb12u1",
           "PkgName": "libudev1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "73f955f96c796a94"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4320,7 +4395,8 @@
           "PkgID": "libudev1@252.36-1~deb12u1",
           "PkgName": "libudev1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "73f955f96c796a94"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4363,7 +4439,8 @@
           "PkgID": "libudev1@252.36-1~deb12u1",
           "PkgName": "libudev1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "73f955f96c796a94"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4407,7 +4484,8 @@
           "PkgID": "libudev1@252.36-1~deb12u1",
           "PkgName": "libudev1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libudev1@252.36-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "73f955f96c796a94"
           },
           "InstalledVersion": "252.36-1~deb12u1",
           "Status": "affected",
@@ -4452,7 +4530,8 @@
           "PkgID": "libuuid1@2.38.1-5+deb12u3",
           "PkgName": "libuuid1",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/libuuid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/libuuid1@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "9ad01d49bd044281"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -4510,7 +4589,8 @@
           "PkgID": "login@1:4.13+dfsg1-1+b1",
           "PkgName": "login",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "9c383ff5c6ed1c81"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -4573,7 +4653,8 @@
           "PkgID": "login@1:4.13+dfsg1-1+b1",
           "PkgName": "login",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "9c383ff5c6ed1c81"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -4619,7 +4700,8 @@
           "PkgID": "login@1:4.13+dfsg1-1+b1",
           "PkgName": "login",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "9c383ff5c6ed1c81"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -4674,7 +4756,8 @@
           "PkgID": "login@1:4.13+dfsg1-1+b1",
           "PkgName": "login",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "9c383ff5c6ed1c81"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -4719,7 +4802,8 @@
           "PkgID": "login@1:4.13+dfsg1-1+b1",
           "PkgName": "login",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/login@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "9c383ff5c6ed1c81"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -4744,7 +4828,8 @@
           "PkgID": "mount@2.38.1-5+deb12u3",
           "PkgName": "mount",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/mount@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/mount@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "63b0977e705f5d35"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -4802,7 +4887,8 @@
           "PkgID": "ncurses-base@6.4-4",
           "PkgName": "ncurses-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/ncurses-base@6.4-4?arch=all\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/ncurses-base@6.4-4?arch=all\u0026distro=debian-12.10",
+            "UID": "9836f95b93f3d6b3"
           },
           "InstalledVersion": "6.4-4",
           "Status": "affected",
@@ -4854,7 +4940,8 @@
           "PkgID": "ncurses-bin@6.4-4",
           "PkgName": "ncurses-bin",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/ncurses-bin@6.4-4?arch=amd64\u0026distro=debian-12.10",
+            "UID": "d53f35453c9fec6d"
           },
           "InstalledVersion": "6.4-4",
           "Status": "affected",
@@ -4906,7 +4993,8 @@
           "PkgID": "openssl@3.0.15-1~deb12u1",
           "PkgName": "openssl",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/openssl@3.0.15-1~deb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/openssl@3.0.15-1~deb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b566d3a5a5f5123d"
           },
           "InstalledVersion": "3.0.15-1~deb12u1",
           "Status": "affected",
@@ -4962,7 +5050,8 @@
           "PkgID": "passwd@1:4.13+dfsg1-1+b1",
           "PkgName": "passwd",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "414b9b1c20179157"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -5025,7 +5114,8 @@
           "PkgID": "passwd@1:4.13+dfsg1-1+b1",
           "PkgName": "passwd",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "414b9b1c20179157"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -5071,7 +5161,8 @@
           "PkgID": "passwd@1:4.13+dfsg1-1+b1",
           "PkgName": "passwd",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "414b9b1c20179157"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -5126,7 +5217,8 @@
           "PkgID": "passwd@1:4.13+dfsg1-1+b1",
           "PkgName": "passwd",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "414b9b1c20179157"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -5171,7 +5263,8 @@
           "PkgID": "passwd@1:4.13+dfsg1-1+b1",
           "PkgName": "passwd",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/passwd@4.13%2Bdfsg1-1%2Bb1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "414b9b1c20179157"
           },
           "InstalledVersion": "1:4.13+dfsg1-1+b1",
           "Status": "affected",
@@ -5196,7 +5289,8 @@
           "PkgID": "perl-base@5.36.0-7+deb12u1",
           "PkgName": "perl-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
@@ -5271,7 +5365,8 @@
           "PkgID": "perl-base@5.36.0-7+deb12u1",
           "PkgName": "perl-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
@@ -5326,7 +5421,8 @@
           "PkgID": "perl-base@5.36.0-7+deb12u1",
           "PkgName": "perl-base",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
@@ -5395,7 +5491,8 @@
           "PkgID": "sysvinit-utils@3.06-4",
           "PkgName": "sysvinit-utils",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/sysvinit-utils@3.06-4?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/sysvinit-utils@3.06-4?arch=amd64\u0026distro=debian-12.10",
+            "UID": "aab9a8419e8391fc"
           },
           "InstalledVersion": "3.06-4",
           "Status": "affected",
@@ -5420,7 +5517,8 @@
           "PkgID": "tar@1.34+dfsg-1.2+deb12u1",
           "PkgName": "tar",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "40d3e19c8515b967"
           },
           "InstalledVersion": "1.34+dfsg-1.2+deb12u1",
           "Status": "affected",
@@ -5467,7 +5565,8 @@
           "PkgID": "tar@1.34+dfsg-1.2+deb12u1",
           "PkgName": "tar",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/tar@1.34%2Bdfsg-1.2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
+            "UID": "40d3e19c8515b967"
           },
           "InstalledVersion": "1.34+dfsg-1.2+deb12u1",
           "Status": "affected",
@@ -5492,7 +5591,8 @@
           "PkgID": "util-linux@2.38.1-5+deb12u3",
           "PkgName": "util-linux",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/util-linux@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/util-linux@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "7baf07217f173406"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -5550,7 +5650,8 @@
           "PkgID": "util-linux-extra@2.38.1-5+deb12u3",
           "PkgName": "util-linux-extra",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10"
+            "PURL": "pkg:deb/debian/util-linux-extra@2.38.1-5%2Bdeb12u3?arch=amd64\u0026distro=debian-12.10",
+            "UID": "30ac64362504313"
           },
           "InstalledVersion": "2.38.1-5+deb12u3",
           "Status": "affected",
@@ -5608,7 +5709,8 @@
           "PkgID": "zlib1g@1:1.2.13.dfsg-1",
           "PkgName": "zlib1g",
           "PkgIdentifier": {
-            "PURL": "pkg:deb/debian/zlib1g@1.2.13.dfsg-1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1"
+            "PURL": "pkg:deb/debian/zlib1g@1.2.13.dfsg-1?arch=amd64\u0026distro=debian-12.10\u0026epoch=1",
+            "UID": "a68dc3e936e6a0f7"
           },
           "InstalledVersion": "1:1.2.13.dfsg-1",
           "Status": "will_not_fix",
@@ -5688,7 +5790,8 @@
           "PkgName": "pip",
           "PkgPath": "usr/local/lib/python3.9/site-packages/pip-23.0.1.dist-info/METADATA",
           "PkgIdentifier": {
-            "PURL": "pkg:pypi/pip@23.0.1"
+            "PURL": "pkg:pypi/pip@23.0.1",
+            "UID": "db4b2871e1f85d98"
           },
           "InstalledVersion": "23.0.1",
           "FixedVersion": "23.3",
@@ -5763,4 +5866,3 @@
     }
   ]
 }
-
