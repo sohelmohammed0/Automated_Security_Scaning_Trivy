@@ -1,0 +1,1 @@
+docker run -d -p 5000:5000 -v D:/Automated_Security_Scaning_Trivy/trivy-report.json:/app/trivy-report.json trivy-security-demo

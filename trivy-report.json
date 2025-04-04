@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-03T19:26:51.2237171+05:30",
+  "CreatedAt": "2025-04-04T06:09:32.1242417+05:30",
   "ArtifactName": "trivy-security-demo:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,7 +8,7 @@
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:10e18268c22de770ee5ceb27242fc8a2b5086cfba6de43731ff88f08dcef468b",
+    "ImageID": "sha256:bd69f840d3fa024fd394589da08240716ae2e4a48f55582c47eba60524de212a",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
@@ -17,15 +17,15 @@
       "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
       "sha256:66ca6d9266ec8c892b3c3b25ddbf09662f93fb5ea5f570126a31b353b68f4830",
       "sha256:57d8c02cc0d90e7aab4f64b6a7c0b0ad78858d61a98f383aacd9ca66e04eeb58",
-      "sha256:f81994a09f2dc022c12e030c9044c68527aee5e664438d22add97de944ed9ee4",
-      "sha256:6ea16916b21d51742dcb85b819c69514066c9fe0b3e388b1a4de9abf73a248c4"
+      "sha256:c24217abfe503edd6978230a113335ab2f38c64e2ad01a0cdb5057d6f2bd908d",
+      "sha256:196c2b710773d3720ddc6396c02feac5c5db270a79e246b75131cc475da695c6"
     ],
     "RepoTags": [
       "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-03T13:54:36.58785346Z",
+      "created": "2025-04-03T23:41:34.091424128Z",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -99,23 +99,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T13:54:36Z",
+          "created": "2025-04-03T23:41:34Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T13:54:36Z",
+          "created": "2025-04-03T23:41:34Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T13:54:36Z",
+          "created": "2025-04-03T23:41:34Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-03T13:54:36Z",
+          "created": "2025-04-03T23:41:34Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -132,8 +132,8 @@
           "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
           "sha256:66ca6d9266ec8c892b3c3b25ddbf09662f93fb5ea5f570126a31b353b68f4830",
           "sha256:57d8c02cc0d90e7aab4f64b6a7c0b0ad78858d61a98f383aacd9ca66e04eeb58",
-          "sha256:f81994a09f2dc022c12e030c9044c68527aee5e664438d22add97de944ed9ee4",
-          "sha256:6ea16916b21d51742dcb85b819c69514066c9fe0b3e388b1a4de9abf73a248c4"
+          "sha256:c24217abfe503edd6978230a113335ab2f38c64e2ad01a0cdb5057d6f2bd908d",
+          "sha256:196c2b710773d3720ddc6396c02feac5c5db270a79e246b75131cc475da695c6"
         ]
       },
       "config": {
