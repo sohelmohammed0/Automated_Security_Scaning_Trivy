@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T06:09:32.1242417+05:30",
+  "CreatedAt": "2025-04-04T10:57:17.2397478+05:30",
   "ArtifactName": "trivy-security-demo:latest",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,24 +8,24 @@
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:bd69f840d3fa024fd394589da08240716ae2e4a48f55582c47eba60524de212a",
+    "ImageID": "sha256:25cf09d029ba42c18b75d43e63ca8e8b48c70fc03ceac74f0432060554a758ef",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
       "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
       "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
       "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-      "sha256:66ca6d9266ec8c892b3c3b25ddbf09662f93fb5ea5f570126a31b353b68f4830",
-      "sha256:57d8c02cc0d90e7aab4f64b6a7c0b0ad78858d61a98f383aacd9ca66e04eeb58",
-      "sha256:c24217abfe503edd6978230a113335ab2f38c64e2ad01a0cdb5057d6f2bd908d",
-      "sha256:196c2b710773d3720ddc6396c02feac5c5db270a79e246b75131cc475da695c6"
+      "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
+      "sha256:339ac1882a34b5a89611b5fcc0ed96511a44b1093be030ae7d1f2310a268a25e",
+      "sha256:c6f36cca6a795fc3ca42d750173f60e1b7956b86c62e907ab859cceb9778d8a8",
+      "sha256:6635781f9b48eb087c3677ccaf035f6eb55c90cf022a4611d7f926890768dc3c"
     ],
     "RepoTags": [
       "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-03T23:41:34.091424128Z",
+      "created": "2025-04-04T05:20:31.952672776Z",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -89,33 +89,33 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T13:33:30Z",
+          "created": "2025-04-04T05:19:03Z",
           "created_by": "COPY requirements.txt /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T13:33:40Z",
-          "created_by": "RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt # buildkit",
+          "created": "2025-04-04T05:20:31Z",
+          "created_by": "RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt     \u0026\u0026 apt-get update     \u0026\u0026 apt-get install -y perl-base zlib1g     \u0026\u0026 apt-get clean     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T23:41:34Z",
+          "created": "2025-04-04T05:20:31Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T23:41:34Z",
+          "created": "2025-04-04T05:20:31Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-03T23:41:34Z",
+          "created": "2025-04-04T05:20:31Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-03T23:41:34Z",
+          "created": "2025-04-04T05:20:31Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -130,10 +130,10 @@
           "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
           "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
           "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-          "sha256:66ca6d9266ec8c892b3c3b25ddbf09662f93fb5ea5f570126a31b353b68f4830",
-          "sha256:57d8c02cc0d90e7aab4f64b6a7c0b0ad78858d61a98f383aacd9ca66e04eeb58",
-          "sha256:c24217abfe503edd6978230a113335ab2f38c64e2ad01a0cdb5057d6f2bd908d",
-          "sha256:196c2b710773d3720ddc6396c02feac5c5db270a79e246b75131cc475da695c6"
+          "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
+          "sha256:339ac1882a34b5a89611b5fcc0ed96511a44b1093be030ae7d1f2310a268a25e",
+          "sha256:c6f36cca6a795fc3ca42d750173f60e1b7956b86c62e907ab859cceb9778d8a8",
+          "sha256:6635781f9b48eb087c3677ccaf035f6eb55c90cf022a4611d7f926890768dc3c"
         ]
       },
       "config": {
@@ -5792,176 +5792,6 @@
           ],
           "PublishedDate": "2023-10-25T18:17:44.867Z",
           "LastModifiedDate": "2025-02-13T18:16:01.057Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2022-40897",
-          "PkgName": "setuptools",
-          "PkgPath": "usr/local/lib/python3.9/site-packages/setuptools-58.1.0.dist-info/METADATA",
-          "PkgIdentifier": {
-            "PURL": "pkg:pypi/setuptools@58.1.0",
-            "UID": "a31a7b733078920c"
-          },
-          "InstalledVersion": "58.1.0",
-          "FixedVersion": "65.5.1",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2022-40897",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory pip",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
-          },
-          "Title": "pypa-setuptools: Regular Expression Denial of Service (ReDoS) in package_index.py",
-          "Description": "Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-1333"
-          ],
-          "VendorSeverity": {
-            "alma": 2,
-            "amazon": 2,
-            "bitnami": 2,
-            "cbl-mariner": 2,
-            "ghsa": 3,
-            "nvd": 2,
-            "oracle-oval": 2,
-            "photon": 2,
-            "redhat": 2,
-            "rocky": 2,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "bitnami": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 5.9
-            },
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
-            },
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 5.9
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 5.9
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2023:0952",
-            "https://access.redhat.com/security/cve/CVE-2022-40897",
-            "https://bugzilla.redhat.com/2158559",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2158559",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40897",
-            "https://errata.almalinux.org/9/ALSA-2023-0952.html",
-            "https://errata.rockylinux.org/RLSA-2023:0952",
-            "https://github.com/pypa/advisory-database/tree/main/vulns/setuptools/PYSEC-2022-43012.yaml",
-            "https://github.com/pypa/setuptools",
-            "https://github.com/pypa/setuptools/blob/fe8a98e696241487ba6ac9f91faa38ade939ec5d/setuptools/package_index.py#L200",
-            "https://github.com/pypa/setuptools/commit/43a9c9bfa6aa626ec2a22540bea28d2ca77964be",
-            "https://github.com/pypa/setuptools/compare/v65.5.0...v65.5.1",
-            "https://github.com/pypa/setuptools/issues/3659",
-            "https://linux.oracle.com/cve/CVE-2022-40897.html",
-            "https://linux.oracle.com/errata/ELSA-2024-2987.html",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R/",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H",
-            "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H/",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/ADES3NLOE5QJKBLGNZNI2RGVOSQXA37R",
-            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/YNA2BAH2ACBZ4TVJZKFLCR7L23BG5C3H",
-            "https://nvd.nist.gov/vuln/detail/CVE-2022-40897",
-            "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages",
-            "https://pyup.io/posts/pyup-discovers-redos-vulnerabilities-in-top-python-packages/",
-            "https://pyup.io/vulnerabilities/CVE-2022-40897/52495",
-            "https://pyup.io/vulnerabilities/CVE-2022-40897/52495/",
-            "https://security.netapp.com/advisory/ntap-20230214-0001",
-            "https://security.netapp.com/advisory/ntap-20230214-0001/",
-            "https://security.netapp.com/advisory/ntap-20240621-0006",
-            "https://security.netapp.com/advisory/ntap-20240621-0006/",
-            "https://setuptools.pypa.io/en/latest",
-            "https://ubuntu.com/security/notices/USN-5817-1",
-            "https://www.cve.org/CVERecord?id=CVE-2022-40897"
-          ],
-          "PublishedDate": "2022-12-23T00:15:13.987Z",
-          "LastModifiedDate": "2024-11-21T07:22:13.787Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2024-6345",
-          "PkgName": "setuptools",
-          "PkgPath": "usr/local/lib/python3.9/site-packages/setuptools-58.1.0.dist-info/METADATA",
-          "PkgIdentifier": {
-            "PURL": "pkg:pypi/setuptools@58.1.0",
-            "UID": "a31a7b733078920c"
-          },
-          "InstalledVersion": "58.1.0",
-          "FixedVersion": "70.0.0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a"
-          },
-          "SeveritySource": "ghsa",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-6345",
-          "DataSource": {
-            "ID": "ghsa",
-            "Name": "GitHub Security Advisory pip",
-            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
-          },
-          "Title": "pypa/setuptools: Remote code execution via download functions in the package_index module in pypa/setuptools",
-          "Description": "A vulnerability in the package_index module of pypa/setuptools versions up to 69.1.1 allows for remote code execution via its download functions. These functions, which are used to download packages from URLs provided by users or retrieved from package index servers, are susceptible to code injection. If these functions are exposed to user-controlled inputs, such as package URLs, they can execute arbitrary commands on the system. The issue is fixed in version 70.0.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-94"
-          ],
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "bitnami": 3,
-            "ghsa": 3,
-            "oracle-oval": 3,
-            "photon": 3,
-            "redhat": 3,
-            "rocky": 3,
-            "ubuntu": 2
-          },
-          "CVSS": {
-            "bitnami": {
-              "V3Vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-              "V3Score": 8.8
-            },
-            "ghsa": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-              "V3Score": 8.8
-            },
-            "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-              "V3Score": 8.8
-            }
-          },
-          "References": [
-            "https://access.redhat.com/errata/RHSA-2024:6726",
-            "https://access.redhat.com/security/cve/CVE-2024-6345",
-            "https://bugzilla.redhat.com/2297771",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2297771",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-6345",
-            "https://errata.almalinux.org/9/ALSA-2024-6726.html",
-            "https://errata.rockylinux.org/RLSA-2024:6726",
-            "https://github.com/pypa/setuptools",
-            "https://github.com/pypa/setuptools/commit/88807c7062788254f654ea8c03427adc859321f0",
-            "https://github.com/pypa/setuptools/pull/4332",
-            "https://huntr.com/bounties/d6362117-ad57-4e83-951f-b8141c6e7ca5",
-            "https://linux.oracle.com/cve/CVE-2024-6345.html",
-            "https://linux.oracle.com/errata/ELSA-2024-6726.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2024-6345",
-            "https://ubuntu.com/security/notices/USN-7002-1",
-            "https://www.cve.org/CVERecord?id=CVE-2024-6345"
-          ],
-          "PublishedDate": "2024-07-15T01:15:01.73Z",
-          "LastModifiedDate": "2024-11-21T09:49:28.17Z"
         }
       ]
     }

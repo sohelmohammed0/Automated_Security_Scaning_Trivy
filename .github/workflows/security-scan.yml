@@ -48,3 +48,13 @@ jobs:
           curl -X POST -H 'Content-type: application/json' --data '{
             "text": "⚠️ *Security Scan Failed!* High/Critical vulnerabilities found in trivy-security-demo."
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Login to Docker Hub
+        if: success() && github.event_name == 'push'
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push to Docker Hub
+        if: success() && github.event_name == 'push'
+        run: |
+          docker tag trivy-security-demo:latest ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/trivy-security-demo:latest

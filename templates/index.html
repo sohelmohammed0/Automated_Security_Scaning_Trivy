@@ -63,7 +63,7 @@
     <div class="container">
         <h1>Security Dashboard</h1>
         <div class="status-box {{ 'error' if '⚠️' in scan_data.status else 'success' }}">
-            {{ scan_data.status }} ({{ scan_data.count }} Issues)
+            {{ scan_data.status }} ({{ scan_data.count }} Issues) - Last Scan: {{ scan_data.timestamp }}
         </div>
         {% if scan_data.details %}
         <div class="details">
