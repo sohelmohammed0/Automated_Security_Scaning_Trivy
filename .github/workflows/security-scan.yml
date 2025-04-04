@@ -54,3 +54,48 @@ jobs:
         continue-on-error: false
 
       # Scan the image for vulnerabilities
+      - name: Scan Docker Image with Trivy
+        id: trivy-scan
+        run: |
+          EXIT_CODE=0
+          if [ "${{ env.FAIL_ON_VULNERABILITIES }}" = "true" ]; then
+            EXIT_CODE=1
+          fi
+          trivy image --severity HIGH,CRITICAL --exit-code $EXIT_CODE \
+          ${{ env.IMAGE_NAME }}:base-${{ github.sha }} | tee trivy-scan.log
+
+      # Generate Trivy report
+      - name: Generate Trivy Report
+        if: always()
+        run: |
+          trivy image --format json -o trivy-report.json \
+          ${{ env.IMAGE_NAME }}:base-${{ github.sha }}
+
+      # Build final image with the report
+      - name: Build Final Docker Image with Trivy Report
+        if: always()
+        run: |
+          docker create --name temp-container ${{ env.IMAGE_NAME }}:base-${{ github.sha }}
+          docker cp trivy-report.json temp-container:/app/trivy-report.json
+          docker commit temp-container ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker tag ${{ env.IMAGE_NAME }}:${{ github.sha }} ${{ env.IMAGE_NAME }}:latest
+          docker rm temp-container
+
+      # Upload Trivy artifacts
+      - name: Upload Trivy Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-artifacts
+          path: |
+            trivy-report.json
+            trivy-scan.log
+
+      # Push to Docker Hub
+      - name: Push Docker Image to Docker Hub
+        if: success()
+        run: |
+          echo "Pushing ${{ env.IMAGE_NAME }}:${{ github.sha }}"
+          docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          echo "Pushing ${{ env.IMAGE_NAME }}:latest"
+          docker push ${{ env.IMAGE_NAME }}:latest
