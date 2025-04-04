@@ -5,58 +5,68 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: #f0f4f8;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
         .container {
-            background: #ffffff;
+            background: #fff;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .container:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         h1 {
-            color: #2c3e50;
-            font-size: 2em;
+            color: #1e3a8a;
+            font-size: 2.2em;
             margin-bottom: 20px;
+            font-weight: 600;
         }
         .status {
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2em;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.3em;
             color: #fff;
-            margin-bottom: 20px;
-            background: #3498db;  /* Default blue */
+            margin-bottom: 25px;
+            font-weight: 500;
+            background: #3498db;
+            transition: background 0.3s ease;
         }
         .status.secure {
-            background: #2ecc71;  /* Green for secure */
+            background: #22c55e;
         }
         .status.vulnerable {
-            background: #e74c3c;  /* Red for vulnerable */
+            background: #ef4444;
         }
-        .status.unavailable {
-            background: #95a5a6;  /* Grey for unavailable */
+        .status.unavailable, .status.error {
+            background: #6b7280;
+        }
+        .status small {
+            font-size: 0.8em;
+            opacity: 0.8;
         }
         .details {
             text-align: left;
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 8px;
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #1e3a8a;
         }
         .details h3 {
-            color: #34495e;
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            color: #1e3a8a;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
         .details ul {
             list-style: none;
@@ -64,37 +74,10 @@
         }
         .details li {
             background: #fff;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
         }
-        .details li strong {
-            color: #e74c3c;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Security Dashboard</h1>
-        <div class="status {{ scan_data.status | lower }}">
-            {{ scan_data.status }} ({{ scan_data.count }} Issues)<br>
-            <small>Last Scan: {{ scan_data.timestamp }}</small>
-        </div>
-        {% if scan_data.details %}
-        <div class="details">
-            <h3>Top Vulnerabilities</h3>
-            <ul>
-                {% for vuln in scan_data.details %}
-                <li>
-                    <strong>{{ vuln.VulnerabilityID }}</strong> ({{ vuln.Severity }})<br>
-                    {{ vuln.Title }}<br>
-                    <small>{{ vuln.PkgName }} - {{ vuln.InstalledVersion }}</small>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-    </div>
-</body>
-</html>
+        .details li:hove
