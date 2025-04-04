@@ -90,13 +90,11 @@
         {% endif %}
     </div>
     <script>
-        // Apply dynamic styles using JavaScript after the page loads
-        const color = "{{ scan_data.color }}"; // Jinja2 renders this server-side
+        const color = "{{ scan_data.color }}";
         const statusBox = document.getElementById("status-box");
         statusBox.style.borderColor = color;
         statusBox.style.color = color;
 
-        // Apply the color to all vulnerability items
         const vulnItems = document.querySelectorAll(".vuln-item");
         vulnItems.forEach(item => {
             item.style.borderLeftColor = color;

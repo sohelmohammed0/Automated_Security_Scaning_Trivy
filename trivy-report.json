@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T18:15:46.4894444+05:30",
+  "CreatedAt": "2025-04-04T21:23:08.6247495+05:30",
   "ArtifactName": "trivy-security-demo",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -8,25 +8,25 @@
       "Family": "debian",
       "Name": "12.10"
     },
-    "ImageID": "sha256:8c519d33df74e1f9e467b7dcf87a2b7285492a10acb4e2367884613718e153cd",
+    "ImageID": "sha256:4cac28e46bc506330047da6e33c6cebbb5a526d24d68c7cac02c418d828ae0a0",
     "DiffIDs": [
       "sha256:1287fbecdfcce6ee8cf2436e5b9e9d86a4648db2d91080377d499737f1b307f3",
       "sha256:140ec0aa8af03880fb53bce492a8630996d0f734c6cc329dc2d1e8ca1256dea9",
       "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
       "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
       "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-      "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
-      "sha256:443c5767b4d06862105bdf25417f6e5d2df630dae69e15d9115de5b49af3f938",
-      "sha256:a6ae42cf384be3f8a0e408cc38f76169553b985062560d50547ad7893533f9cc",
-      "sha256:d80c9248aa603fe4330c2661e20ea340cc5dd5efa89b2db8844af26cd0bde102",
-      "sha256:f6ecab7e14210a54d558f29da85705dd0f419d7c2721e8bf67afb45946b13b60"
+      "sha256:bc8f81b428ef310f54cf0f89d1178211d85887588b6957b0b673b99d732e7183",
+      "sha256:e4467c0441569e44e95b04de1fa5ba67dee85158d5e8c010f4f0486eafb50f8e",
+      "sha256:4df39c122db98034cc4346c1e871a22421ad0127bb9c6fd6a2c0ea893b1343a4",
+      "sha256:1a00d22ce074752ff2740127c4dde16d45d7ff63b70c695e1d810228356d83f0",
+      "sha256:2eae6b3e3afd0e69637d509502a1a699941683c2d15c2dcafe16b50d965658dd"
     ],
     "RepoTags": [
       "trivy-security-demo:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-04-04T05:55:44.654587916Z",
+      "created": "2025-04-04T15:52:49.278904802Z",
       "history": [
         {
           "created": "2024-12-04T04:30:01Z",
@@ -90,44 +90,44 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:19:03Z",
+          "created": "2025-04-04T15:52:16Z",
           "created_by": "COPY requirements.txt /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:43Z",
-          "created_by": "RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt     \u0026\u0026 apt-get update     \u0026\u0026 apt-get install -y --no-install-recommends perl-base zlib1g     \u0026\u0026 apt-get clean     \u0026\u0026 rm -rf /var/lib/apt/lists/* # buildkit",
+          "created": "2025-04-04T15:52:48Z",
+          "created_by": "RUN /bin/sh -c apt-get update \u0026\u0026     echo \"deb http://deb.debian.org/debian-security bookworm-security main\" \u003e\u003e /etc/apt/sources.list \u0026\u0026     apt-get update \u0026\u0026     apt-get upgrade -y \u0026\u0026     apt-get install -y --no-install-recommends        perl-base        zlib1g     \u0026\u0026 pip install --no-cache-dir -r requirements.txt \u0026\u0026     apt-get clean \u0026\u0026     rm -rf /var/lib/apt/lists/* # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:43Z",
+          "created": "2025-04-04T15:52:48Z",
           "created_by": "COPY app.py /app/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T15:52:48Z",
           "created_by": "COPY templates/ /app/templates/ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T15:52:49Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T15:52:49Z",
           "created_by": "RUN /bin/sh -c useradd -m appuser \u0026\u0026 chown appuser:appuser /app # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T15:52:49Z",
           "created_by": "USER appuser",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-04-04T05:55:44Z",
+          "created": "2025-04-04T15:52:49Z",
           "created_by": "CMD [\"python\" \"app.py\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -142,11 +142,11 @@
           "sha256:04f6e4cfc28e74355ff17edb23937c7c385a8435406994499ee3f657745a2f1a",
           "sha256:0796a33961efbdc069b7e0ba8533463c67e639c1134253f0e29ed70f04b74b2c",
           "sha256:5a584f8218b32267d6905bbe185bea47ec80dfa12888b51f6d669000902fb274",
-          "sha256:0ba52a26f594c8bae03d67a7f34058d404b76821d1b0ff5335de385518834360",
-          "sha256:443c5767b4d06862105bdf25417f6e5d2df630dae69e15d9115de5b49af3f938",
-          "sha256:a6ae42cf384be3f8a0e408cc38f76169553b985062560d50547ad7893533f9cc",
-          "sha256:d80c9248aa603fe4330c2661e20ea340cc5dd5efa89b2db8844af26cd0bde102",
-          "sha256:f6ecab7e14210a54d558f29da85705dd0f419d7c2721e8bf67afb45946b13b60"
+          "sha256:bc8f81b428ef310f54cf0f89d1178211d85887588b6957b0b673b99d732e7183",
+          "sha256:e4467c0441569e44e95b04de1fa5ba67dee85158d5e8c010f4f0486eafb50f8e",
+          "sha256:4df39c122db98034cc4346c1e871a22421ad0127bb9c6fd6a2c0ea893b1343a4",
+          "sha256:1a00d22ce074752ff2740127c4dde16d45d7ff63b70c695e1d810228356d83f0",
+          "sha256:2eae6b3e3afd0e69637d509502a1a699941683c2d15c2dcafe16b50d965658dd"
         ]
       },
       "config": {
@@ -1945,7 +1945,7 @@
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a766fc6f5729a82a"
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2010,7 +2010,7 @@
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a766fc6f5729a82a"
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2057,7 +2057,7 @@
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a766fc6f5729a82a"
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2110,7 +2110,7 @@
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a766fc6f5729a82a"
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2175,7 +2175,7 @@
           "PkgName": "libgssapi-krb5-2",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libgssapi-krb5-2@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a766fc6f5729a82a"
+            "UID": "842ebc7423a6306c"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2243,7 +2243,7 @@
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a6385e8d146138e3"
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2308,7 +2308,7 @@
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a6385e8d146138e3"
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2355,7 +2355,7 @@
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a6385e8d146138e3"
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2408,7 +2408,7 @@
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a6385e8d146138e3"
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2473,7 +2473,7 @@
           "PkgName": "libk5crypto3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libk5crypto3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a6385e8d146138e3"
+            "UID": "af568d16a916e5f0"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2541,7 +2541,7 @@
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "84bd54cf04d783a"
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2606,7 +2606,7 @@
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "84bd54cf04d783a"
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2653,7 +2653,7 @@
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "84bd54cf04d783a"
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2706,7 +2706,7 @@
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "84bd54cf04d783a"
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2771,7 +2771,7 @@
           "PkgName": "libkrb5-3",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5-3@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "84bd54cf04d783a"
+            "UID": "3006f052789e6218"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2839,7 +2839,7 @@
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "9d869b6ab3b3ff5b"
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2904,7 +2904,7 @@
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "9d869b6ab3b3ff5b"
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -2951,7 +2951,7 @@
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "9d869b6ab3b3ff5b"
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -3004,7 +3004,7 @@
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "9d869b6ab3b3ff5b"
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -3069,7 +3069,7 @@
           "PkgName": "libkrb5support0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libkrb5support0@1.20.1-2%2Bdeb12u2?arch=amd64\u0026distro=debian-12.10",
-            "UID": "9d869b6ab3b3ff5b"
+            "UID": "e8620f51b9c5f3e3"
           },
           "InstalledVersion": "1.20.1-2+deb12u2",
           "Status": "affected",
@@ -3249,7 +3249,7 @@
           "PkgName": "libncursesw6",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libncursesw6@6.4-4?arch=amd64\u0026distro=debian-12.10",
-            "UID": "d50b3c2416f10ee6"
+            "UID": "675ee7ceb3621996"
           },
           "InstalledVersion": "6.4-4",
           "Status": "affected",
@@ -3869,7 +3869,7 @@
           "PkgName": "libsqlite3-0",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/libsqlite3-0@3.40.1-2%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
-            "UID": "698ae3c2dd18eb26"
+            "UID": "9991455ee360ae42"
           },
           "InstalledVersion": "3.40.1-2+deb12u1",
           "Status": "affected",
@@ -5290,7 +5290,7 @@
           "PkgName": "perl-base",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a5cd5b3d4037d2d1"
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
@@ -5366,7 +5366,7 @@
           "PkgName": "perl-base",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a5cd5b3d4037d2d1"
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
@@ -5422,7 +5422,7 @@
           "PkgName": "perl-base",
           "PkgIdentifier": {
             "PURL": "pkg:deb/debian/perl-base@5.36.0-7%2Bdeb12u1?arch=amd64\u0026distro=debian-12.10",
-            "UID": "a5cd5b3d4037d2d1"
+            "UID": "b59784f4ccb7e75e"
           },
           "InstalledVersion": "5.36.0-7+deb12u1",
           "Status": "affected",
