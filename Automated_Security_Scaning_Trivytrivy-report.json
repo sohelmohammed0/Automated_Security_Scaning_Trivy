@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-04-04T11:27:01.0984794+05:30",
+  "CreatedAt": "2025-04-04T11:42:33.4928727+05:30",
   "ArtifactName": "trivy-security-demo:latest",
   "ArtifactType": "container_image",
   "Metadata": {
